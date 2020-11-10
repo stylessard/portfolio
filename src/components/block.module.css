@@ -1,0 +1,21 @@
+.block {
+    margin-bottom: 2em;
+}
+
+.block h2 {
+    font-size: .975rem;
+    font-weight: 700;
+    margin-bottom: .75em;
+}
+
+.blockList {
+    margin-left: .5em;
+}
+
+.blockList,
+.blockList a,
+.blockList p,
+.blockList div {
+    font-size: .875rem;
+    margin-bottom: .5em;
+}

@@ -1,0 +1,8 @@
+.container {
+    padding: 1em;
+    background: gray;
+}
+
+.container p {
+    text-transform: uppercase;
+}
