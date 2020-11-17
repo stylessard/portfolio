@@ -42,7 +42,7 @@
 .formInput label,
 .formTextarea label {
     font-size: .875rem;
-    margin-bottom: .75em;
+    margin-bottom: .65em;
 }
 
 .formInput input,
@@ -53,6 +53,7 @@
 }
 
 .form button {
+    font-size: 1rem;
     padding: 0;
     margin-top: 2em;
     background: #000;
