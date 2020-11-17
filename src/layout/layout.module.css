@@ -7,7 +7,7 @@ body {
     padding: 0;
 }
 
-h2, p, a, div {
+h1, h2, p, a, div, input, label, button {
     font-family: 'Source Code Pro', sans-serif;
 }
 

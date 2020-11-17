@@ -9,7 +9,7 @@ const Layout = ({ pageTitle, children }) => {
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: .75 }} 
+            transition={{ duration: .65 }} 
             className={LayoutStyles.container}>
             <SEO title={pageTitle} />
             <main>

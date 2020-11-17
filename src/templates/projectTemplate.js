@@ -1,12 +1,12 @@
 import React from 'react'
 import TemplateStyles from './projectTemplate.module.css'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { motion } from 'framer-motion'
 
 import Layout from '../layout/layout'
 import Block from '../components/block'
 import Arrow from '../images/back-arrow.svg'
-import Video from '../images/fin-video.mp4'
+import Browser from '../images/top-bar.svg'
 
 const Template = ({ data }) => {
 
@@ -26,7 +26,12 @@ const Template = ({ data }) => {
 
                     <div className={TemplateStyles.projectDetails}>
                         <Block title='Website'>
-                            <a href={project.url}>{project.url}</a>
+                            <a href={project.url}>
+                                Visit 
+                                <span className={TemplateStyles.webAddress}>
+                                    {project.title}
+                                </span>
+                            </a>
                         </Block>
 
                         <Block title='About'>
@@ -44,21 +49,20 @@ const Template = ({ data }) => {
 
                 </div>
 
-                <div className={TemplateStyles.image}>
-                    {/* {project.image.map( (img, index) => {
-                        return <Img 
-                                    fluid={img.childImageSharp.fluid} 
-                                    alt={`${project.title} website layout`}
-                                    key={index} /> 
-                    })} */}
-                    {/* <Img 
-                        fluid={project.image.childImageSharp.fluid} 
-                        alt={`${project.title} website layout`} /> */}
-                    <video muted autoPlay>
-                        <source src={Video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: .75, duration: .65 }} 
+                    className={TemplateStyles.image}>
+                        <img 
+                            src={Browser} 
+                            alt='browser address bar'
+                            className={TemplateStyles.address} />
+                        <video muted autoPlay>
+                            <source src={project.video.publicURL} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                </motion.div>
 
             </div>
         </Layout>
@@ -75,6 +79,9 @@ export const query = graphql`
             description
             tools
             extra
+            video {
+                publicURL
+            }
         }
     }
 `

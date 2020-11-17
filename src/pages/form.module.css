@@ -1,0 +1,96 @@
+.container {
+    width: 85%;
+    max-width: 875px;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container h1 {
+    font-size: .975rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 3em;
+}
+
+.form {
+    margin-top: 3em;
+    width: 100%;
+}
+
+/* Input Group */
+
+.inputGroup {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2em;
+}
+
+.formInput {
+    width: 80%;
+    max-width: 350px;
+}
+
+.formInput,
+.formTextarea {
+    display: flex;
+    flex-direction: column;
+}
+
+.formInput label,
+.formTextarea label {
+    font-size: .875rem;
+    margin-bottom: .75em;
+}
+
+.formInput input,
+.formTextarea textarea {
+    background:#efefef;
+    border: 1px solid #efefef;
+    padding: .75em 1em;
+}
+
+.form button {
+    padding: 0;
+    margin-top: 2em;
+    background: #000;
+    color: #fff;
+    border-radius: 0;;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 769px) {
+    .container {
+        flex-direction: row;
+        margin: 2.5em 0 0 4em;
+    }
+
+    .form {
+        margin-top: 2.5em;
+        margin-left: 4.5em;
+        flex: 1;
+    }
+
+    .inputGroup {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2em 3em;
+    }
+
+    .formInput {
+        width: auto;
+        max-width: none;
+    }
+
+    .formTextarea {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .inputGroup {
+        gap: 2em 5em;
+    }
+}

@@ -1,65 +1,72 @@
 [
     {
-        "title": "Shyt Lyst",
-        "slug": "shyt-lyst",
-        "url": "www.shytlyst.co",
-        "description": "FIN Goods is a wood shop located outside Boston, MA. The build and sell custom wood goods and only woods goods because wood is good, afterall.",
-        "tools": ["CRA", "Framer Motion"],
-        "extra": "Somewhere on the product page is a gateaway into a virtual fitting room for testing out the furniture.",
-        "image": "./images/test.mp4"
+        "title": "Shep's Fund",
+        "slug": "sheps-fund",
+        "url": "https://5fb1f76dae24510007698201--laughing-jang-fba118.netlify.app",
+        "description": "Shep's Fund is a non-profit that helps dog owners pay for their pet's medication.",
+        "tools": ["Gatsby"],
+        "extra": "Nothing.",
+        "image": "./images/shepsfund-snap.png",
+        "video": "./videos/shepsfund-final.mp4"
     },
     {
         "title": "FIN Goods",
         "slug": "fin-goods",
         "url": "www.fingoods.co",
-        "description": "FIN Goods is a wood shop located outside Boston, MA. The build and sell custom wood goods and only woods goods because wood is good, afterall.",
+        "description": "FIN Goods is a wood shop located outside Boston, MA. They build and sell custom wood goods and only woods goods because wood is good, afterall.",
         "tools": ["Gatsby", "Framer Motion", "Stripe"],
         "extra": "Somewhere on the product page is a gateaway into a virtual fitting room for testing out the furniture.",
-        "image": "./images/test.mp4"
+        "image": "./images/fingoods-snap.png",
+        "video": "./videos/fin-final.mp4"
     },
     {
         "title": "Separated",
         "slug": "separated",
-        "url": "www.fingoods.co",
+        "url": "https://sleepy-neumann-b318b4.netlify.app ",
         "description": "Separated is an immersive horror game set in the middle of nowhere. It aims to produce a blurring, once-in-a-lifetime experience.",
-        "tools": ["Gatsby", "Framer Motion", "Canvas"],
-        "extra": "Try dragging some letters away on the sign in page.",
-        "image": "./images/test.mp4"
+        "tools": ["Gatsby", "Framer Motion", "Pythagorean theorem"],
+        "extra": "Try some clicking and dragging to unlock some hidden features.",
+        "image": "./images/separated-snap.png",
+        "video": "./videos/separated-final.mp4"
     },
     {
         "title": "Boxseats",
         "slug": "boxseats",
-        "url": "www.fingoods.co",
-        "description": "Boxseats is a fantasy football-focused newsletter. Every Tuesday morning, they deliever game recaps (written by people who actually watched the games) directly to your inbox.",
-        "tools": ["Gatsby", "Framer Motion", "After Effects"],
-        "extra": "Nothing. Just enjoy the gif of Bill Belichick looking through binoculars.",
-        "image": "./images/test.mp4"
+        "url": "https://suspicious-swartz-af2aab.netlify.app",
+        "description": "Boxseats is a fantasy football-focused newsletter. Every Tuesday morning, they deliver game recaps, written by people who actually watched the games, directly to your inbox.",
+        "tools": ["Gatsby", "Framer Motion", "PS"],
+        "extra": "Just enjoy the gif of Bill Belichick looking through binoculars.",
+        "image": "./images/boxseats-snap.png",
+        "video": "./videos/boxseats-final.mp4"
     },
     {
         "title": "Kim Park",
         "slug": "kim-park",
-        "url": "www.fingoods.co",
-        "description": "Kim Park is a photographer from London. She specializes in product photography and taking pictures of food.",
-        "tools": ["Gatsby", "Framer Motion", "Stripe"],
-        "extra": "Something",
-        "image": "./images/test.mp4"
+        "url": "https://5fb1fa47281e10000748e708--tender-sinoussi-843706.netlify.app ",
+        "description": "Kim Park is a food stylist and photographer from London. She specializes in the decoration of fine foods ranging from korean cuisine to McDonalds.",
+        "tools": ["Gatsby", "Framer Motion"],
+        "extra": "Check out those tasty burgers.",
+        "image": "./images/kimpark-snap.png",
+        "video": "./videos/kim-final.mp4"
     },
     {
         "title": "Sneaky Jesus",
         "slug": "sneaky-jesus",
-        "url": "www.fingoods.co",
+        "url": "https://www.sneakyjesusnyc.com",
         "description": "Sneaky Jesus is a art brand from NYC. It follows the journeys of Jesus as he travels across the globe as if he really was just a stranger on the bus trying to make his way home.",
         "tools": ["Gatsby", "Framer Motion", "Stripe"],
         "extra": "There's a hidden message somewhere on the site. That's all I'll say.",
-        "image": "./images/test.mp4"
+        "image": "./images/sneaky-snap.png",
+        "video": "./videos/sneaky-final.mp4"
     },
     {
-        "title": "Cadillac Lounge",
-        "slug": "cadillac-lounge",
-        "url": "www.fingoods.co",
-        "description": "Cadillac Lounge is one of the oldest bars in Toronto, Canada. It has live music and was once the hangout for stars like Johnny Cash and Thelma & Louise.",
-        "tools": ["Gatsby", "Framer Motion"],
-        "extra": "There's no need for extras when you've got that beautiful exterior.",
-        "image": "./images/test.mp4"
+        "title": "Seaside Riley's",
+        "slug": "seaside-rileys",
+        "url": "https://youthful-brown-24b5fb.netlify.app",
+        "description": "Seaside Riley's is an oceanfront restaurant overlooking the beautiful Pacific. Not only do they serve the freshest of fresh seafood, but also host local bands on the weekends.",
+        "tools": ["Gatsby", "Framer Motion", "Youtube"],
+        "extra": "There's no need for extras when you've got that beautiful view.",
+        "image": "./images/rileys-snap.png",
+        "video": "./videos/rileys-final.mp4"
     }
 ]
