@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
 
                     <div className={IndexStyles.resume}>
                         <Block title='Bio'>
-                            Ty Lessard is a develper and designer focused squarely on the user experience. He yada yada yada.
+                            Ty Lessard is a developer and designer based just outside Boston, MA. He's big into the user experience and finding new and different ways to engage.
                         </Block>
 
                         <Block title='Projects'>
