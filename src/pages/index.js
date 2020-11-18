@@ -27,8 +27,8 @@ const IndexPage = ({ data }) => {
                     </div>
 
                     <div className={IndexStyles.resume}>
-                        <Block title='Bio'>
-                            Ty Lessard is a developer and designer based just outside Boston, MA. He's big into the user experience and finding new and different ways to engage.
+                        <Block title='About'>
+                            Ty Lessard is a developer and designer from Providence, RI. He enjoys finding new and different ways to approach the user experience.
                         </Block>
 
                         <Block title='Projects'>
@@ -85,7 +85,7 @@ const IndexPage = ({ data }) => {
                         <Block title='Contact'>
                             <React.Fragment>
                                 <Link to='/form'>Inquiry form</Link>
-                                <a href="mailto:stormlessard@gmail.com">stormlessard@gmail.com</a>
+                                {/* <a href="mailto:stormlessard@gmail.com">stormlessard@gmail.com</a> */}
                             </React.Fragment>
                         </Block>
                     </div>

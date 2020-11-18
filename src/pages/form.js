@@ -52,7 +52,7 @@ const FormPage = () => {
                             <FormInput
                                 type='text'
                                 id='referral'
-                                label="How'd you hear about us" />
+                                label="How'd you hear about me" />
                             <FormInput
                                 type='text'
                                 id='budget'
