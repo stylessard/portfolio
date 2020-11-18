@@ -30,6 +30,11 @@ a {
     display: block;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+}
+
 video {
     border-radius: .2em;
     margin-bottom: -4px;
