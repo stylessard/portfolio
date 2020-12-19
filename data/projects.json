@@ -1,43 +1,13 @@
 [
     {
-        "title": "Shep's Fund",
-        "slug": "sheps-fund",
-        "url": "https://5fb1f76dae24510007698201--laughing-jang-fba118.netlify.app",
-        "description": "Shep's Fund is a non-profit that helps dog owners pay for their pet's medication.",
-        "tools": ["Gatsby"],
-        "extra": "Nothing.",
-        "image": "./images/shepsfund-snap.png",
-        "video": "./videos/shepsfund-final.mp4"
-    },
-    {
-        "title": "FIN Goods",
-        "slug": "fin-goods",
-        "url": "www.fingoods.co",
-        "description": "FIN Goods is a wood shop located outside Boston, MA. They build and sell custom wood goods and only woods goods because wood is good, afterall.",
-        "tools": ["Gatsby", "Framer Motion", "Stripe"],
-        "extra": "Somewhere on the product page is a gateaway into a virtual fitting room for testing out the furniture.",
-        "image": "./images/fingoods-snap.png",
-        "video": "./videos/fin-final.mp4"
-    },
-    {
-        "title": "Separated",
-        "slug": "separated",
-        "url": "https://sleepy-neumann-b318b4.netlify.app ",
-        "description": "Separated is an immersive horror game set in the middle of nowhere. It aims to produce a blurring, once-in-a-lifetime experience.",
-        "tools": ["Gatsby", "Framer Motion", "Pythagorean theorem"],
-        "extra": "Try some clicking and dragging to unlock some hidden features.",
-        "image": "./images/separated-snap.png",
-        "video": "./videos/separated-final.mp4"
-    },
-    {
-        "title": "Boxseats",
-        "slug": "boxseats",
-        "url": "https://suspicious-swartz-af2aab.netlify.app",
-        "description": "Boxseats is a fantasy football-focused newsletter. Every Tuesday morning, they deliver game recaps, written by people who actually watched the games, directly to your inbox.",
-        "tools": ["Gatsby", "Framer Motion", "PS"],
-        "extra": "Just enjoy the gif of Bill Belichick looking through binoculars.",
-        "image": "./images/boxseats-snap.png",
-        "video": "./videos/boxseats-final.mp4"
+        "title": "Leash",
+        "slug": "leash",
+        "url": "https://pensive-goldberg-28b036.netlify.app/",
+        "description": "Leash is an on-demand dog walking service. Users can browse dog walkers in their area, book their services, communicate with them, and pay all online. It couldn't be easier.",
+        "tools": ["Gatsby, React Date Picker"],
+        "extra": "There's no need for extras when you've plenty pictures of dogs.",
+        "image": "./images/leash-snap.png",
+        "video": "./videos/leash-final.mp4"
     },
     {
         "title": "Kim Park",
@@ -50,6 +20,46 @@
         "video": "./videos/kim-final.mp4"
     },
     {
+        "title": "Shep's Fund",
+        "slug": "sheps-fund",
+        "url": "https://5fb1f76dae24510007698201--laughing-jang-fba118.netlify.app",
+        "description": "Shep's Fund is a non-profit that helps dog owners pay for their pet's medication.",
+        "tools": ["Gatsby"],
+        "extra": "Nothing.",
+        "image": "./images/shepsfund-snap.png",
+        "video": "./videos/shepsfund-final.mp4"
+    },
+    {
+        "title": "Separated",
+        "slug": "separated",
+        "url": "https://sleepy-neumann-b318b4.netlify.app ",
+        "description": "Separated is an immersive horror game set in the middle of nowhere. It aims to produce a blurring, once-in-a-lifetime experience.",
+        "tools": ["Gatsby", "Framer Motion", "Pythagorean theorem"],
+        "extra": "Use that flashlight to uncover some things.",
+        "image": "./images/separated-snap.png",
+        "video": "./videos/separated-final.mp4"
+    },
+    {
+        "title": "FIN Goods",
+        "slug": "fin-goods",
+        "url": "www.fingoods.co",
+        "description": "FIN Goods is a wood shop located outside Boston, MA. They build and sell custom wood goods and only woods goods because wood is good, afterall.",
+        "tools": ["Gatsby", "Framer Motion", "Stripe"],
+        "extra": "Somewhere on the product page is a gateaway into a virtual fitting room for testing out the furniture.",
+        "image": "./images/fingoods-snap.png",
+        "video": "./videos/fin-final.mp4"
+    },
+    {
+        "title": "Boxseats",
+        "slug": "boxseats",
+        "url": "https://suspicious-swartz-af2aab.netlify.app",
+        "description": "Boxseats is a fantasy football-focused newsletter. Every Tuesday morning, they deliver game recaps, written by people who actually watched the games, directly to your inbox.",
+        "tools": ["Gatsby", "Framer Motion", "PS"],
+        "extra": "Just enjoy the gif of Bill Belichick looking through binoculars.",
+        "image": "./images/boxseats-snap.png",
+        "video": "./videos/boxseats-final.mp4"
+    },
+    {
         "title": "Sneaky Jesus",
         "slug": "sneaky-jesus",
         "url": "https://www.sneakyjesusnyc.com",
@@ -58,15 +68,5 @@
         "extra": "There's a hidden message somewhere on the site. That's all I'll say.",
         "image": "./images/sneaky-snap.png",
         "video": "./videos/sneaky-final.mp4"
-    },
-    {
-        "title": "Seaside Riley's",
-        "slug": "seaside-rileys",
-        "url": "https://youthful-brown-24b5fb.netlify.app",
-        "description": "Seaside Riley's is an oceanfront restaurant overlooking the beautiful Pacific. Not only do they serve the freshest of fresh seafood, but also host local bands on the weekends.",
-        "tools": ["Gatsby", "Framer Motion", "Youtube"],
-        "extra": "There's no need for extras when you've got that beautiful view.",
-        "image": "./images/rileys-snap.png",
-        "video": "./videos/rileys-final.mp4"
     }
 ]

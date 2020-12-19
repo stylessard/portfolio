@@ -21,5 +21,5 @@
 .blockList p,
 .blockList div {
     font-size: .875rem;
-    margin-bottom: .45em;
+    padding-bottom: .45em;
 }

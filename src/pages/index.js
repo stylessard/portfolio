@@ -37,7 +37,8 @@ const IndexPage = ({ data }) => {
                                     key={pos}
                                     href={`/projects/${item.node.slug}`}
                                     onMouseOver={() => console.log(item)}
-                                    onMouseEnter={() => setPreview(item.node.image.childImageSharp.fluid)}
+                                    // onMouseEnter={() => setPreview(item.node.image.childImageSharp.fluid)}
+                                    onMouseEnter={() => setPreview(item.node.image.publicURL)}
                                     onMouseLeave={() => setPreview(null)}>{item.node.title}</a>
                             })}
                         </Block>
@@ -105,10 +106,14 @@ const IndexPage = ({ data }) => {
                                         src={Browser} 
                                         alt='browser address bar'
                                         className={IndexStyles.address} />
-                                    <Img 
-                                        fluid={preview} 
+                                    <img 
+                                        src={preview}
                                         alt=''
                                         className={IndexStyles.browser} />
+                                    {/* <Img 
+                                        fluid={preview} 
+                                        alt=''
+                                        className={IndexStyles.browser} /> */}
                             </motion.div>
                         }
                     </AnimatePresence>
@@ -129,6 +134,9 @@ export const query = graphql`
                     title
                     slug
                     image {
+                        relativePath
+                        absolutePath
+                        publicURL
                         childImageSharp {
                             fluid(maxWidth: 900) {
                                 ...GatsbyImageSharpFluid
