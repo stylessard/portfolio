@@ -20,18 +20,40 @@ const IndexPage = ({ data }) => {
         <Layout pageTitle='Home'>
             <div className={IndexStyles.container}>
 
-                <div className={IndexStyles.text}>
-
                     <div className={IndexStyles.logo}>
                         <img src={Logo} alt='logo' />
                     </div>
 
-                    <div className={IndexStyles.resume}>
-                        <Block title='About'>
-                            Ty Lessard is a developer and designer from Providence, RI. He enjoys finding new and different ways to approach the user experience.
-                        </Block>
+                    <div className={IndexStyles.content}>
 
-                        <Block title='Projects'>
+                        <div className={IndexStyles.about}>
+                            <p>Ty Lessard is a developer and designer from Providence, RI. He enjoys finding different ways to approach the user experience. 
+                            <span className={IndexStyles.learn}>Learn more</span>.
+                            </p>
+                        </div>
+
+                        <div className={IndexStyles.projects}>
+                                {projectsArr.map( (item, pos) => {
+                                    return (
+                                        <div className={IndexStyles.projectItem}>
+                                            <Link 
+                                                key={pos} 
+                                                className={IndexStyles.projectImage}
+                                                to={`/projects/${item.node.slug}`}>
+                                                <Img 
+                                                    fluid={item.node.image.childImageSharp.fluid}
+                                                    alt={item.node.title}
+                                                    style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }} />
+                                            </Link>
+                                            <div 
+                                                className={IndexStyles.projectTitle}>{item.node.title}</div>
+                                        </div>
+                                    )
+                                } )}
+                        </div>
+
+                    </div>
+                        {/* <Block title='Projects'>
                             {projectsArr.map( (item, pos) => {
                                 return <a 
                                     key={pos}
@@ -41,39 +63,6 @@ const IndexPage = ({ data }) => {
                                     onMouseEnter={() => setPreview(item.node.image.publicURL)}
                                     onMouseLeave={() => setPreview(null)}>{item.node.title}</a>
                             })}
-                        </Block>
-
-                        {/* <Block title='Projects'>
-                            <React.Fragment>
-                                <a 
-                                    href='/projects/sheps-fund'
-                                    onMouseEnter={() => setCounter(1)}
-                                    onMouseLeave={() => setCounter(null)}>Shep's Fund</a>
-                                <a 
-                                    href='/projects/fin-goods'
-                                    onMouseEnter={() => setCounter(1)}
-                                    onMouseLeave={() => setCounter(null)}>FIN Goods</a>
-                                <a 
-                                    href='/projects/separated'
-                                    onMouseEnter={() => setCounter(2)}
-                                    onMouseLeave={() => setCounter(null)}>Separated</a>
-                                <a 
-                                    href='/projects/boxseats'
-                                    onMouseEnter={() => setCounter(2)}
-                                    onMouseLeave={() => setCounter(null)}>Boxseats</a>
-                                <a 
-                                    href='/projects/seaside-rileys'
-                                    onMouseEnter={() => setCounter(3)}
-                                    onMouseLeave={() => setCounter(null)}>Seaside Riley's</a>
-                                <a 
-                                    href='/projects/kim-park'
-                                    onMouseEnter={() => setCounter(4)}
-                                    onMouseLeave={() => setCounter(null)}>Kim Park</a>
-                                <a 
-                                    href='/projects/sneaky-jesus'
-                                    onMouseEnter={() => setCounter(4)}
-                                    onMouseLeave={() => setCounter(null)}>Sneaky Jesus</a>
-                            </React.Fragment>
                         </Block> */}
 
                         {/* <Block title='Social'>
@@ -83,17 +72,13 @@ const IndexPage = ({ data }) => {
                             </React.Fragment>
                         </Block> */}
 
-                        <Block title='Contact'>
+                        {/* <Block title='Contact'>
                             <React.Fragment>
                                 <Link to='/form'>Inquiry form</Link>
-                                {/* <a href="mailto:stormlessard@gmail.com">stormlessard@gmail.com</a> */}
                             </React.Fragment>
-                        </Block>
-                    </div>
+                        </Block> */}
 
-                </div>
-
-                <div className={IndexStyles.image}>
+                {/* <div className={IndexStyles.image}>
                     <AnimatePresence exitBeforeEnter>
                         {preview && 
                             <motion.div 
@@ -101,7 +86,6 @@ const IndexPage = ({ data }) => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}>
-                                    {/* <div className={IndexStyles.previewHeader}>Preview</div> */}
                                     <img 
                                         src={Browser} 
                                         alt='browser address bar'
@@ -110,14 +94,10 @@ const IndexPage = ({ data }) => {
                                         src={preview}
                                         alt=''
                                         className={IndexStyles.browser} />
-                                    {/* <Img 
-                                        fluid={preview} 
-                                        alt=''
-                                        className={IndexStyles.browser} /> */}
                             </motion.div>
                         }
                     </AnimatePresence>
-                </div>
+                </div> */}
 
             </div>
         </Layout>
@@ -134,9 +114,6 @@ export const query = graphql`
                     title
                     slug
                     image {
-                        relativePath
-                        absolutePath
-                        publicURL
                         childImageSharp {
                             fluid(maxWidth: 900) {
                                 ...GatsbyImageSharpFluid
