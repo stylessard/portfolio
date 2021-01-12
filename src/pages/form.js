@@ -3,7 +3,7 @@ import FormStyles from './form.module.css'
 import { Link } from 'gatsby'
 
 import Layout from '../layout/layout'
-import Arrow from '../images/back-arrow.svg'
+import Logo from '../images/stormlessard-logo.svg'
 
 const FormInput = ({ label, type, id }) => {
     return (
@@ -29,44 +29,56 @@ const FormPage = () => {
         <Layout pageTitle='Form'>
             <div className={FormStyles.container}>
 
-                <Link to='/' className={FormStyles.back}>
-                    <img src={Arrow} alt='back arrow' />
+                <Link to='/' className={FormStyles.logo}>
+                    <img src={Logo} alt='logo' />
                 </Link>
 
-                <div className={FormStyles.form}>
-                    <h1>Tell me about your project</h1>
-                    <form 
-                        method="post" 
-                        netlify-honeypot="bot-field" 
-                        data-netlify="true" 
-                        name="contact">
-                        <div className={FormStyles.inputGroup}>
-                            <FormInput
-                                type='text'
-                                id='name'
-                                label="What is your name" />
-                            <FormInput
-                                type='email'
-                                id='email'
-                                label="What is your email" />
-                            <FormInput
-                                type='text'
-                                id='referral'
-                                label="How'd you hear about me" />
-                            <FormInput
-                                type='text'
-                                id='budget'
-                                label="What is your budget" />
-                            <FormTextarea 
-                                rows='8'
-                                id='description'
-                                label='Describe your project' />
-                        </div>
-                        <button type='submit'>Submit</button>
+                <div className={FormStyles.content}>
 
-                        <input type="hidden" name="bot-field" />                      <input type="hidden" name="form-name" value="contact" />
-                    </form>
+                    <div className={FormStyles.heading}>
+                        <p>Get in touch about a future project by either <br />
+                        1) using the form below<br />2) sending a message to
+                        <span className={FormStyles.email}>
+                            <a href='mailto:hi@storminnormin.com'>hi@storminnormin.com</a>
+                        </span></p>
+                    </div>
 
+                    <div className={FormStyles.form}>
+                        <form 
+                            method="post" 
+                            netlify-honeypot="bot-field" 
+                            data-netlify="true" 
+                            name="contact">
+                            <div className={FormStyles.inputGroup}>
+                                <FormInput
+                                    type='text'
+                                    id='name'
+                                    label="Name" />
+                                <FormInput
+                                    type='email'
+                                    id='email'
+                                    label="Email" />
+                                <FormInput
+                                    type='text'
+                                    id='referral'
+                                    label="How'd you hear about me" />
+                                <FormInput
+                                    type='text'
+                                    id='budget'
+                                    label="What's your budget" />
+                                <FormTextarea 
+                                    rows='8'
+                                    id='description'
+                                    label='Describe your project' />
+                            </div>
+                            <div className={FormStyles.buttonRow}>
+                                <button type='submit'>Submit</button>
+                            </div>
+
+                            <input type="hidden" name="bot-field" />                      <input type="hidden" name="form-name" value="contact" />
+                        </form>
+
+                    </div>
                 </div>
 
             </div>

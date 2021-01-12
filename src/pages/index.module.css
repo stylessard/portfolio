@@ -6,19 +6,19 @@
 
 .logo {
     position: fixed;
-    top: 2.5em;
-    left: 4.5em;
+    top: 1.75em;
+    left: 2.5em;
 }
 
 .logo img {
-    width: 24px;
+    width: 20px;
 }
 
 /* Content */
 
 .content {
-    width: 66%;
-    margin: 2.75em auto 0;
+    width: 90%;
+    margin: 5.5em auto 0;
 }
 
 /* About */
@@ -26,8 +26,9 @@
 .about p {
     min-width: 375px;
     width: 58%;
-    font-size: .925rem;
-    line-height: 1.5em;
+    font-size: .95rem;
+    color: #2b2b2b;
+    line-height: 1.55em;
 }
 
 .learn {
@@ -35,28 +36,139 @@
     border-bottom: 1px solid rgb(48, 48, 48);
 }
 
+.learn a {
+    display: inline-block;
+}
+
 /* Projects */
 
 .projects {
     width: 95%;
-    margin-top: 5em;
+    margin-top: 5.5em;
 }
 
 .projectItem {
     margin-bottom: 7em;
 }
 
-.projectImage {
-    margin-bottom: .75em;
-    border: 1px solid rgb(247, 247, 247);
+.video {
+    width: 100%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
 }
 
-.projectTitle {
-    font-size: .85rem;
-    margin-left: .5em;
+.video video {
+    width: 100%;
+}
+
+/* Range */
+
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-right: 1em;
+    padding-top: .5em;
+}
+
+.controls span {
+    font-size: .75rem;
+    margin-right: 1em;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 75px;
+  height: .1em;
+  border-radius: 5px;
+  background: #1a1a1a;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #1a1a1a;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all .15s ease-in-out;
+}
+
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    background: rgb(46, 46, 46);
+}
+
+.slider:active::-webkit-slider-thumb {
+    background: blue;
+}
+
+.slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 50%;
+    background: pink;
+    cursor: pointer;
+    transition: background .15s ease-in-out;
+}
+
+.slider::-moz-range-thumb:hover {
+    background: purple;
+}
+
+
+.slider:active::-moz-range-thumb {
+    background: orange;
+}
+
+/* Firefox Overrides */
+::-moz-range-track {
+    background: red;
+    border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer { 
+    border: 0; 
 }
 
 /* Media Queries */
 
 @media screen and (min-width: 501px) {
+    .content {
+        width: 80%;
+        margin: 5.5em auto 0;
+    }
+
+    .logo {
+        position: fixed;
+        top: 2em;
+        left: 4.5em;
+    }
+    
+    .logo img {
+        width: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .logo {
+        position: fixed;
+        top: 2.5em;
+        left: 4.5em;
+    }
+    
+    .logo img {
+        width: 24px;
+    }
+
+    .content {
+        width: 66%;
+        margin: 2.75em auto 0;
+    }
 }

@@ -1,20 +1,42 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import IndexStyles from './index.module.css'
-import Img from 'gatsby-image'
 import { Link, graphql } from 'gatsby'
 import { motion, AnimatePresence } from 'framer-motion'
 
 import Layout from '../layout/layout'
 import Logo from '../images/stormlessard-logo.svg'
-import Block from '../components/block'
-import Browser from '../images/top-bar.svg'
 
 const IndexPage = ({ data }) => {
 
-    const [ preview, setPreview ] = useState(null)
     const projectsArr = data.allProjectsJson.edges
+    const projectsRef = useRef([])
+    const [ isPlaying, setIsPlaying ] = useState(null)
+    const [ timeArr, setTimeArr ] = useState([0, 0, 0, 0, 0, 0])
 
-    console.log(projectsArr)
+    useEffect(() => {
+        projectsRef.current = projectsRef.current.slice(0, projectsArr.length);
+        console.log(timeArr)
+     }, [projectsArr]);
+
+     const seekTo = (val, pos) => {
+         const vidLength = projectsRef.current[pos].duration
+         const seekedAmount = vidLength * (val / 100)
+         projectsRef.current[pos].currentTime = seekedAmount
+
+         const newArr = timeArr
+         newArr[pos] = val
+         setTimeArr([...newArr])
+     }
+
+     const updateVidTime = (pos) => {
+         const currTime = projectsRef.current[pos].currentTime
+         const vidLength = projectsRef.current[pos].duration
+         const newTime = currTime * (100 / vidLength)
+
+         const newArr = timeArr
+         newArr[pos] = newTime
+         setTimeArr([...newArr])
+     }
 
     return (
         <Layout pageTitle='Home'>
@@ -28,77 +50,57 @@ const IndexPage = ({ data }) => {
 
                         <div className={IndexStyles.about}>
                             <p>Ty Lessard is a developer and designer from Providence, RI. He enjoys finding different ways to approach the user experience. 
-                            <span className={IndexStyles.learn}>Learn more</span>.
+                            <span className={IndexStyles.learn}>
+                                <Link to='/about'>Learn more</Link>
+                            </span>.
                             </p>
                         </div>
 
                         <div className={IndexStyles.projects}>
                                 {projectsArr.map( (item, pos) => {
                                     return (
-                                        <div className={IndexStyles.projectItem}>
-                                            <Link 
-                                                key={pos} 
-                                                className={IndexStyles.projectImage}
+                                        <div 
+                                            className={IndexStyles.projectItem}
+                                            key={pos}>
+                                            <Link  
                                                 to={`/projects/${item.node.slug}`}>
-                                                <Img 
-                                                    fluid={item.node.image.childImageSharp.fluid}
-                                                    alt={item.node.title}
-                                                    style={{ boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)' }} />
+                                                <motion.video 
+                                                    muted 
+                                                    ref={el => projectsRef.current[pos] = el}
+                                                    className={IndexStyles.video}
+                                                    onMouseEnter={() => setIsPlaying(pos)}
+                                                    onMouseLeave={() => setIsPlaying(null)}
+                                                    onHoverStart={() => projectsRef.current[pos].play()}
+                                                    onHoverEnd={() => projectsRef.current[pos].pause()}
+                                                    onTimeUpdate={() => updateVidTime(pos)}>
+                                                    <source src={item.node.video.publicURL} type="video/mp4" />
+                                                    Your browser does not support the video tag.
+                                                </motion.video>
                                             </Link>
-                                            <div 
-                                                className={IndexStyles.projectTitle}>{item.node.title}</div>
+                                            <div className={IndexStyles.controls}>
+                                                <span>
+                                                    {isPlaying === pos 
+                                                        ? 'playing' 
+                                                        : 'paused'}
+                                                </span>
+                                                <input 
+                                                    className={IndexStyles.slider}
+                                                    type='range'
+                                                    min='0'
+                                                    max='100'
+                                                    onChange={e => {
+                                                        const val = e.target.value
+                                                        seekTo(val, pos)
+                                                    }}
+                                                    value={timeArr[pos]}
+                                                    step='1' />
+                                            </div>
                                         </div>
                                     )
                                 } )}
                         </div>
 
                     </div>
-                        {/* <Block title='Projects'>
-                            {projectsArr.map( (item, pos) => {
-                                return <a 
-                                    key={pos}
-                                    href={`/projects/${item.node.slug}`}
-                                    onMouseOver={() => console.log(item)}
-                                    // onMouseEnter={() => setPreview(item.node.image.childImageSharp.fluid)}
-                                    onMouseEnter={() => setPreview(item.node.image.publicURL)}
-                                    onMouseLeave={() => setPreview(null)}>{item.node.title}</a>
-                            })}
-                        </Block> */}
-
-                        {/* <Block title='Social'>
-                            <React.Fragment>
-                                <a href='https://www.twitter.com/StormNotDavis'>@stormnotdavis</a>
-                                <a href='https://www.twitter.com/StormNotDavis'>instagram/stormlessard</a>
-                            </React.Fragment>
-                        </Block> */}
-
-                        {/* <Block title='Contact'>
-                            <React.Fragment>
-                                <Link to='/form'>Inquiry form</Link>
-                            </React.Fragment>
-                        </Block> */}
-
-                {/* <div className={IndexStyles.image}>
-                    <AnimatePresence exitBeforeEnter>
-                        {preview && 
-                            <motion.div 
-                                className={IndexStyles.preview}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}>
-                                    <img 
-                                        src={Browser} 
-                                        alt='browser address bar'
-                                        className={IndexStyles.address} />
-                                    <img 
-                                        src={preview}
-                                        alt=''
-                                        className={IndexStyles.browser} />
-                            </motion.div>
-                        }
-                    </AnimatePresence>
-                </div> */}
-
             </div>
         </Layout>
     )
@@ -119,6 +121,9 @@ export const query = graphql`
                                 ...GatsbyImageSharpFluid
                             }
                         }
+                    }
+                    video {
+                        publicURL
                     }
                 }
             }
