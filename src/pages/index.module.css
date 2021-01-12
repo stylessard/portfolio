@@ -5,7 +5,7 @@
 /* Text */
 
 .logo {
-    position: fixed;
+    position: absolute;
     top: 1.75em;
     left: 2.5em;
 }
@@ -24,8 +24,8 @@
 /* About */
 
 .about p {
-    min-width: 375px;
-    width: 58%;
+    min-width: none;
+    width: 90%;
     font-size: .95rem;
     color: #2b2b2b;
     line-height: 1.55em;
@@ -146,13 +146,17 @@ input::-moz-focus-outer {
     }
 
     .logo {
-        position: fixed;
         top: 2em;
         left: 4.5em;
     }
     
     .logo img {
         width: 20px;
+    }
+
+    .about p {
+        min-width: 375px;
+        width: 58%;
     }
 }
 
